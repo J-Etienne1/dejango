@@ -16,6 +16,12 @@ Including another URLconf
 
 ## https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
 
+
+"""
+To create a new app like I have here called music, using cmd go to the project directory, 
+and use python manage.py startapp music (change app name after startapp to whatever you want )
+"""
+
 from django.contrib import admin
 from django.urls import path
 
