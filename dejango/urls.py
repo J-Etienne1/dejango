@@ -20,11 +20,55 @@ Including another URLconf
 """
 To create a new app like I have here called music, using cmd go to the project directory, 
 and use python manage.py startapp music (change app name after startapp to whatever you want )
+
+handy tip for getting to the location you want using cmd without have to ude dir and navigate is to 
+
+Navigate to the folder in Windows Explorer, highlight the complete folder path in the top pane and type "cmd" - voila!
+
 """
 
+
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path # Added include to refer music\urls.py
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('music/', include('music.urls')),
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
