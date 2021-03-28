@@ -11,8 +11,5 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     # /music/71
-
-
-def detail(request, album_id):
-    return HttpResponse("<h2> Details for Album ID: " + str(album_id) + "</2h>")
+    path('<int:album_id>/', views.detail, name='detail')
 ]
