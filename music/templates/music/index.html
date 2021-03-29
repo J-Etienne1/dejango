@@ -1,17 +1,14 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>-->
 
 
-<ul>
-    {% for album in all_albums %} <!-- dejango code for HTML -->
-    <li><a href="#">Album Title Here</a></li>
-    {% endfor %}
-</ul>
+
+<!-- if there was nothing here instead of the page looking broken we can use the following if, else & endif statements-->
+
+{% if all_albums %}
+    <ul>
+        {% for album in all_albums %} <!-- python code for HTML {$$}-->
+            <li><a href="/music/{{ album.id }}}">{{ album.album_title }}</a></li> <!-- adding a variable  to HTML, use double curley braces -->
+        {% endfor %}
+    </ul>
+{%  else %}
+    <h3>You don't have any albums</h3>
+{% endif %}
