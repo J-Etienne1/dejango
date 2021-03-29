@@ -4,9 +4,10 @@
 <!-- if there was nothing here instead of the page looking broken we can use the following if, else & endif statements-->
 
 {% if all_albums %}
+    <h3>Here are all my Albums </h3>
     <ul>
         {% for album in all_albums %} <!-- python code for HTML {$$}-->
-            <li><a href="/music/{{ album.id }}}">{{ album.album_title }}</a></li> <!-- adding a variable  to HTML, use double curley braces -->
+            <li><a href="/music/{{ album.id }}">{{ album.album_title}}</a></li> <!-- adding a variable  to HTML, use double curley braces -->
         {% endfor %}
     </ul>
 {%  else %}

@@ -27,48 +27,10 @@ Navigate to the folder in Windows Explorer, highlight the complete folder path i
 
 """
 
-
-
 from django.contrib import admin
-from django.urls import include, path # Added include to refer music\urls.py
-
+from django.urls import include, path  # Added include to refer music\urls.py
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('music/', include('music.urls')),
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
