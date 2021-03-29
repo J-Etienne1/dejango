@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from django.http import HttpResponse
+from django.http import Http404
 from django.shortcuts import render
 from .models import Album
 
@@ -10,9 +10,12 @@ from .models import Album
 
 def index(request):
     all_albums = Album.objects.all()
-    context = {'all_albums': all_albums}
-    return render(request, 'music/index.html', context)
+    return render(request, 'music/index.html', {'all_albums': all_albums})
 
 
 def detail(request, album_id):
-    return HttpResponse("<h2> Details for Album ID: " + str(album_id) + "</2h>")
+    try:
+        album = Album.objects.get(pk=album_id) # using id instead of pk didnt work
+    except Album.DoesNotExist:
+        raise Http404('Album does not exist')
+    return render(request, 'music/detail.html', {'album': album})
